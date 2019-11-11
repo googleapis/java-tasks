@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.26.1](https://www.github.com/googleapis/java-tasks/compare/v1.26.0...v1.26.1) (2019-11-11)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.25.0 ([#10](https://www.github.com/googleapis/java-tasks/issues/10)) ([0a65b44](https://www.github.com/googleapis/java-tasks/commit/0a65b44692ba157fdd7af53f7aa02ff8068522ba))
+
 ## [1.26.0](https://www.github.com/googleapis/java-tasks/compare/v0.90.0...v1.26.0) (2019-10-25)
 
 
