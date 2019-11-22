@@ -29,8 +29,8 @@
  * <pre>
  * <code>
  * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
- *   QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
- *   Queue response = cloudTasksClient.getQueue(name);
+ *   ListQueuesRequest request = ListQueuesRequest.newBuilder().build();
+ *   ListQueuesResponse response = cloudTasksClient.listQueues(request);
  * }
  * </code>
  * </pre>

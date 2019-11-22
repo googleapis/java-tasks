@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.tasks.v2.stub.CloudTasksStub;
 import com.google.cloud.tasks.v2.stub.CloudTasksStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -1126,7 +1127,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy response = cloudTasksClient.getIamPolicy(resource);
    * }
    * </code></pre>
@@ -1135,7 +1136,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(QueueName resource) {
+  public final Policy getIamPolicy(ResourceName resource) {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
@@ -1158,7 +1159,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy response = cloudTasksClient.getIamPolicy(resource.toString());
    * }
    * </code></pre>
@@ -1187,7 +1188,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -1216,7 +1217,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -1247,7 +1248,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudTasksClient.setIamPolicy(resource, policy);
    * }
@@ -1260,7 +1261,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(QueueName resource, Policy policy) {
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
@@ -1287,7 +1288,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudTasksClient.setIamPolicy(resource.toString(), policy);
    * }
@@ -1324,7 +1325,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1358,7 +1359,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1388,7 +1389,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = cloudTasksClient.testIamPermissions(resource, permissions);
    * }
@@ -1402,7 +1403,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      QueueName resource, List<String> permissions) {
+      ResourceName resource, List<String> permissions) {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
@@ -1426,7 +1427,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = cloudTasksClient.testIamPermissions(resource.toString(), permissions);
    * }
@@ -1464,7 +1465,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1495,7 +1496,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())

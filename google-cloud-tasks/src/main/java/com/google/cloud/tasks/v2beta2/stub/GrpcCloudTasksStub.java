@@ -15,9 +15,6 @@
  */
 package com.google.cloud.tasks.v2beta2.stub;
 
-import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListQueuesPagedResponse;
-import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListTasksPagedResponse;
-
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -224,7 +221,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable;
-  private final UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable;
   private final UnaryCallable<GetQueueRequest, Queue> getQueueCallable;
   private final UnaryCallable<CreateQueueRequest, Queue> createQueueCallable;
   private final UnaryCallable<UpdateQueueRequest, Queue> updateQueueCallable;
@@ -237,7 +233,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable;
-  private final UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
   private final UnaryCallable<CreateTaskRequest, Task> createTaskCallable;
   private final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable;
@@ -551,9 +546,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
     this.listQueuesCallable =
         callableFactory.createUnaryCallable(
             listQueuesTransportSettings, settings.listQueuesSettings(), clientContext);
-    this.listQueuesPagedCallable =
-        callableFactory.createPagedCallable(
-            listQueuesTransportSettings, settings.listQueuesSettings(), clientContext);
     this.getQueueCallable =
         callableFactory.createUnaryCallable(
             getQueueTransportSettings, settings.getQueueSettings(), clientContext);
@@ -589,9 +581,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
     this.listTasksCallable =
         callableFactory.createUnaryCallable(
             listTasksTransportSettings, settings.listTasksSettings(), clientContext);
-    this.listTasksPagedCallable =
-        callableFactory.createPagedCallable(
-            listTasksTransportSettings, settings.listTasksSettings(), clientContext);
     this.getTaskCallable =
         callableFactory.createUnaryCallable(
             getTaskTransportSettings, settings.getTaskSettings(), clientContext);
@@ -618,10 +607,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             runTaskTransportSettings, settings.runTaskSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable() {
-    return listQueuesPagedCallable;
   }
 
   public UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable() {
@@ -667,10 +652,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
-  }
-
-  public UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable() {
-    return listTasksPagedCallable;
   }
 
   public UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable() {

@@ -419,7 +419,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -471,7 +471,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -515,7 +515,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -563,7 +563,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -1583,7 +1583,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
      * [request
-     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1635,7 +1635,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
      * [request
-     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1679,7 +1679,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
      * [request
-     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1728,7 +1728,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
      * [request
-     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1784,7 +1784,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
      * [request
-     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1837,7 +1837,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
      * [request
-     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1888,7 +1888,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
      * [request
-     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or

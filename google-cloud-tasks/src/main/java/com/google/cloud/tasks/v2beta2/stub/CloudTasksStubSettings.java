@@ -15,11 +15,7 @@
  */
 package com.google.cloud.tasks.v2beta2.stub;
 
-import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListQueuesPagedResponse;
-import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListTasksPagedResponse;
-
 import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -28,18 +24,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.PageContext;
-import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.PagedListDescriptor;
-import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest;
 import com.google.cloud.tasks.v2beta2.CancelLeaseRequest;
 import com.google.cloud.tasks.v2beta2.CreateQueueRequest;
@@ -92,13 +82,13 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getQueue to 30 seconds:
+ * <p>For example, to set the total timeout of listQueues to 30 seconds:
  *
  * <pre>
  * <code>
  * CloudTasksStubSettings.Builder cloudTasksSettingsBuilder =
  *     CloudTasksStubSettings.newBuilder();
- * cloudTasksSettingsBuilder.getQueueSettings().getRetrySettings().toBuilder()
+ * cloudTasksSettingsBuilder.listQueuesSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * CloudTasksStubSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();
  * </code>
@@ -111,8 +101,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final PagedCallSettings<ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
-      listQueuesSettings;
+  private final UnaryCallSettings<ListQueuesRequest, ListQueuesResponse> listQueuesSettings;
   private final UnaryCallSettings<GetQueueRequest, Queue> getQueueSettings;
   private final UnaryCallSettings<CreateQueueRequest, Queue> createQueueSettings;
   private final UnaryCallSettings<UpdateQueueRequest, Queue> updateQueueSettings;
@@ -124,8 +113,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
-  private final PagedCallSettings<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
-      listTasksSettings;
+  private final UnaryCallSettings<ListTasksRequest, ListTasksResponse> listTasksSettings;
   private final UnaryCallSettings<GetTaskRequest, Task> getTaskSettings;
   private final UnaryCallSettings<CreateTaskRequest, Task> createTaskSettings;
   private final UnaryCallSettings<DeleteTaskRequest, Empty> deleteTaskSettings;
@@ -136,8 +124,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
   private final UnaryCallSettings<RunTaskRequest, Task> runTaskSettings;
 
   /** Returns the object with the settings used for calls to listQueues. */
-  public PagedCallSettings<ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
-      listQueuesSettings() {
+  public UnaryCallSettings<ListQueuesRequest, ListQueuesResponse> listQueuesSettings() {
     return listQueuesSettings;
   }
 
@@ -193,8 +180,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
   }
 
   /** Returns the object with the settings used for calls to listTasks. */
-  public PagedCallSettings<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
-      listTasksSettings() {
+  public UnaryCallSettings<ListTasksRequest, ListTasksResponse> listTasksSettings() {
     return listTasksSettings;
   }
 
@@ -329,118 +315,11 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     runTaskSettings = settingsBuilder.runTaskSettings().build();
   }
 
-  private static final PagedListDescriptor<ListQueuesRequest, ListQueuesResponse, Queue>
-      LIST_QUEUES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListQueuesRequest, ListQueuesResponse, Queue>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListQueuesRequest injectToken(ListQueuesRequest payload, String token) {
-              return ListQueuesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListQueuesRequest injectPageSize(ListQueuesRequest payload, int pageSize) {
-              return ListQueuesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListQueuesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListQueuesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Queue> extractResources(ListQueuesResponse payload) {
-              return payload.getQueuesList() != null
-                  ? payload.getQueuesList()
-                  : ImmutableList.<Queue>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListTasksRequest, ListTasksResponse, Task>
-      LIST_TASKS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTasksRequest, ListTasksResponse, Task>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTasksRequest injectToken(ListTasksRequest payload, String token) {
-              return ListTasksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTasksRequest injectPageSize(ListTasksRequest payload, int pageSize) {
-              return ListTasksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTasksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTasksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Task> extractResources(ListTasksResponse payload) {
-              return payload.getTasksList() != null
-                  ? payload.getTasksList()
-                  : ImmutableList.<Task>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
-      LIST_QUEUES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>() {
-            @Override
-            public ApiFuture<ListQueuesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListQueuesRequest, ListQueuesResponse> callable,
-                ListQueuesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListQueuesResponse> futureResponse) {
-              PageContext<ListQueuesRequest, ListQueuesResponse, Queue> pageContext =
-                  PageContext.create(callable, LIST_QUEUES_PAGE_STR_DESC, request, context);
-              return ListQueuesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
-      LIST_TASKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>() {
-            @Override
-            public ApiFuture<ListTasksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTasksRequest, ListTasksResponse> callable,
-                ListTasksRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTasksResponse> futureResponse) {
-              PageContext<ListTasksRequest, ListTasksResponse, Task> pageContext =
-                  PageContext.create(callable, LIST_TASKS_PAGE_STR_DESC, request, context);
-              return ListTasksPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for CloudTasksStubSettings. */
   public static class Builder extends StubSettings.Builder<CloudTasksStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final PagedCallSettings.Builder<
-            ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
+    private final UnaryCallSettings.Builder<ListQueuesRequest, ListQueuesResponse>
         listQueuesSettings;
     private final UnaryCallSettings.Builder<GetQueueRequest, Queue> getQueueSettings;
     private final UnaryCallSettings.Builder<CreateQueueRequest, Queue> createQueueSettings;
@@ -453,9 +332,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-    private final PagedCallSettings.Builder<
-            ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
-        listTasksSettings;
+    private final UnaryCallSettings.Builder<ListTasksRequest, ListTasksResponse> listTasksSettings;
     private final UnaryCallSettings.Builder<GetTaskRequest, Task> getTaskSettings;
     private final UnaryCallSettings.Builder<CreateTaskRequest, Task> createTaskSettings;
     private final UnaryCallSettings.Builder<DeleteTaskRequest, Empty> deleteTaskSettings;
@@ -507,7 +384,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      listQueuesSettings = PagedCallSettings.newBuilder(LIST_QUEUES_PAGE_STR_FACT);
+      listQueuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getQueueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -529,7 +406,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listTasksSettings = PagedCallSettings.newBuilder(LIST_TASKS_PAGE_STR_FACT);
+      listTasksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -606,7 +483,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
       builder
           .deleteQueueSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -626,7 +503,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
       builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -636,7 +513,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
       builder
           .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -656,7 +533,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
       builder
           .deleteTaskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -752,8 +629,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to listQueues. */
-    public PagedCallSettings.Builder<ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
-        listQueuesSettings() {
+    public UnaryCallSettings.Builder<ListQueuesRequest, ListQueuesResponse> listQueuesSettings() {
       return listQueuesSettings;
     }
 
@@ -809,8 +685,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to listTasks. */
-    public PagedCallSettings.Builder<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
-        listTasksSettings() {
+    public UnaryCallSettings.Builder<ListTasksRequest, ListTasksResponse> listTasksSettings() {
       return listTasksSettings;
     }
 
