@@ -48,12 +48,13 @@ public class ITSystemTest {
 
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String LOCATION = "us-central1";
-  private static final LocationName LOCATION_NAME = LocationName.of(PROJECT_ID, LOCATION);
+  private static final String LOCATION_NAME = LocationName.of(PROJECT_ID, LOCATION).toString();
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String QUEUE_ID = "test-queue-" + ID;
-  private static final QueueName QUEUE_NAME = QueueName.of(PROJECT_ID, LOCATION, QUEUE_ID);
+  private static final String QUEUE_NAME = QueueName.of(PROJECT_ID, LOCATION, QUEUE_ID).toString();
   private static final String TASK_ID = "test-task-" + ID;
-  private static final TaskName TASK_NAME = TaskName.of(PROJECT_ID, LOCATION, QUEUE_ID, TASK_ID);
+  private static final String TASK_NAME =
+      TaskName.of(PROJECT_ID, LOCATION, QUEUE_ID, TASK_ID).toString();
   private static final String URL = "https://example.com/taskhandler";
   private static final String PAYLOAD = "Hello, World!";
   private static Queue queue;
@@ -67,18 +68,15 @@ public class ITSystemTest {
 
     /* create queue */
     Queue createQueue =
-        Queue.newBuilder().setName(QUEUE_NAME.toString()).setState(Queue.State.RUNNING).build();
+        Queue.newBuilder().setName(QUEUE_NAME).setState(Queue.State.RUNNING).build();
     CreateQueueRequest queueRequest =
-        CreateQueueRequest.newBuilder()
-            .setParent(LOCATION_NAME.toString())
-            .setQueue(createQueue)
-            .build();
+        CreateQueueRequest.newBuilder().setParent(LOCATION_NAME).setQueue(createQueue).build();
     queue = client.createQueue(queueRequest);
 
     /* create task */
     Task createTask =
         Task.newBuilder()
-            .setName(TASK_NAME.toString())
+            .setName(TASK_NAME)
             .setHttpRequest(
                 HttpRequest.newBuilder()
                     .setBody(ByteString.copyFrom(PAYLOAD, Charset.defaultCharset()))
@@ -87,7 +85,7 @@ public class ITSystemTest {
                     .build())
             .build();
     CreateTaskRequest taskRequest =
-        CreateTaskRequest.newBuilder().setParent(QUEUE_NAME.toString()).setTask(createTask).build();
+        CreateTaskRequest.newBuilder().setParent(QUEUE_NAME).setTask(createTask).build();
     task = client.createTask(taskRequest);
   }
 
@@ -95,21 +93,18 @@ public class ITSystemTest {
   public static void tearDown() {
 
     /* delete task */
-    DeleteTaskRequest taskRequest =
-        DeleteTaskRequest.newBuilder().setName(TASK_NAME.toString()).build();
+    DeleteTaskRequest taskRequest = DeleteTaskRequest.newBuilder().setName(TASK_NAME).build();
     client.deleteTask(taskRequest);
 
     /* delete queue */
-    DeleteQueueRequest queueRequest =
-        DeleteQueueRequest.newBuilder().setName(QUEUE_NAME.toString()).build();
+    DeleteQueueRequest queueRequest = DeleteQueueRequest.newBuilder().setName(QUEUE_NAME).build();
     client.deleteQueue(queueRequest);
     client.close();
   }
 
   @Test
   public void listQueuesTest() {
-    ListQueuesRequest request =
-        ListQueuesRequest.newBuilder().setParent(LOCATION_NAME.toString()).build();
+    ListQueuesRequest request = ListQueuesRequest.newBuilder().setParent(LOCATION_NAME).build();
     for (Queue actual : client.listQueues(request).iterateAll()) {
       if (queue.getName().equals(actual.getName())) {
         compareQueue(queue, actual);
@@ -119,15 +114,14 @@ public class ITSystemTest {
 
   @Test
   public void getQueueTest() {
-    GetQueueRequest request = GetQueueRequest.newBuilder().setName(QUEUE_NAME.toString()).build();
+    GetQueueRequest request = GetQueueRequest.newBuilder().setName(QUEUE_NAME).build();
     Queue actual = client.getQueue(request);
     compareQueue(queue, actual);
   }
 
   @Test
   public void listTasksTest() {
-    ListTasksRequest request =
-        ListTasksRequest.newBuilder().setParent(QUEUE_NAME.toString()).build();
+    ListTasksRequest request = ListTasksRequest.newBuilder().setParent(QUEUE_NAME).build();
     for (Task actual : client.listTasks(request).iterateAll()) {
       if (task.getName().equals(actual.getName())) {
         compareTask(task, actual);
@@ -137,23 +131,21 @@ public class ITSystemTest {
 
   @Test
   public void pauseQueueTest() {
-    PauseQueueRequest request =
-        PauseQueueRequest.newBuilder().setName(QUEUE_NAME.toString()).build();
+    PauseQueueRequest request = PauseQueueRequest.newBuilder().setName(QUEUE_NAME).build();
     Queue actual = client.pauseQueue(request);
     assertEquals(Queue.State.PAUSED, actual.getState());
   }
 
   @Test
   public void resumeQueueTest() {
-    ResumeQueueRequest request =
-        ResumeQueueRequest.newBuilder().setName(QUEUE_NAME.toString()).build();
+    ResumeQueueRequest request = ResumeQueueRequest.newBuilder().setName(QUEUE_NAME).build();
     Queue actual = client.resumeQueue(request);
     assertEquals(Queue.State.RUNNING, actual.getState());
   }
 
   @Test
   public void getTaskTest() {
-    GetTaskRequest request = GetTaskRequest.newBuilder().setName(TASK_NAME.toString()).build();
+    GetTaskRequest request = GetTaskRequest.newBuilder().setName(TASK_NAME).build();
     Task actual = client.getTask(request);
     compareTask(task, actual);
   }
