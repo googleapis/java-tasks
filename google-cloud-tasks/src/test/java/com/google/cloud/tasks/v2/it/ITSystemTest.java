@@ -107,7 +107,7 @@ public class ITSystemTest {
     ListQueuesRequest request = ListQueuesRequest.newBuilder().setParent(LOCATION_NAME).build();
     for (Queue actual : client.listQueues(request).iterateAll()) {
       if (queue.getName().equals(actual.getName())) {
-        compareQueue(queue, actual);
+        assertQueue(queue, actual);
       }
     }
   }
@@ -115,8 +115,7 @@ public class ITSystemTest {
   @Test
   public void getQueueTest() {
     GetQueueRequest request = GetQueueRequest.newBuilder().setName(QUEUE_NAME).build();
-    Queue actual = client.getQueue(request);
-    compareQueue(queue, actual);
+    assertQueue(queue, client.getQueue(request));
   }
 
   @Test
@@ -124,7 +123,7 @@ public class ITSystemTest {
     ListTasksRequest request = ListTasksRequest.newBuilder().setParent(QUEUE_NAME).build();
     for (Task actual : client.listTasks(request).iterateAll()) {
       if (task.getName().equals(actual.getName())) {
-        compareTask(task, actual);
+        assertTask(task, actual);
       }
     }
   }
@@ -146,18 +145,17 @@ public class ITSystemTest {
   @Test
   public void getTaskTest() {
     GetTaskRequest request = GetTaskRequest.newBuilder().setName(TASK_NAME).build();
-    Task actual = client.getTask(request);
-    compareTask(task, actual);
+    assertTask(task, client.getTask(request));
   }
 
-  private void compareQueue(Queue expected, Queue actual) {
+  private void assertQueue(Queue expected, Queue actual) {
     assertEquals(expected.getName(), actual.getName());
     assertEquals(expected.getRateLimits(), actual.getRateLimits());
     assertEquals(expected.getRetryConfig(), actual.getRetryConfig());
     assertEquals(expected.getState(), actual.getState());
   }
 
-  private void compareTask(Task expected, Task actual) {
+  private void assertTask(Task expected, Task actual) {
     assertEquals(expected.getName(), actual.getName());
     assertEquals(expected.getHttpRequest(), actual.getHttpRequest());
     assertEquals(expected.getCreateTime(), actual.getCreateTime());
