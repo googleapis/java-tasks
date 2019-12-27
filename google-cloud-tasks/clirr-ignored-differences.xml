@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/CloudTasksClient*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/stub/GrpcCloudTasksStub*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/stub/CloudTasksStub*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/CloudTasksClient$*</className>
+  </difference>
+</differences>
