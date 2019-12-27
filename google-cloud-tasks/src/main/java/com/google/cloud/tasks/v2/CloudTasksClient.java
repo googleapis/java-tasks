@@ -1203,6 +1203,10 @@ public class CloudTasksClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
+  public final Policy getIamPolicy(QueueName queueName) {
+    return getIamPolicy((ResourceName) queueName);
+  }
+
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a [Queue][google.cloud.tasks.v2.Queue]. Returns an empty
@@ -1340,6 +1344,10 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final Policy setIamPolicy(SetIamPolicyRequest request) {
     return setIamPolicyCallable().call(request);
+  }
+
+  public final Policy setIamPolicy(QueueName queue, Policy policy) {
+    return setIamPolicy((ResourceName) queue, policy);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1480,6 +1488,11 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
     return testIamPermissionsCallable().call(request);
+  }
+
+  public final TestIamPermissionsResponse testIamPermissions(
+      QueueName queue, List<String> permissions) {
+    return testIamPermissions((ResourceName) queue, permissions);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

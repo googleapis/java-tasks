@@ -15,6 +15,9 @@
  */
 package com.google.cloud.tasks.v2beta2.stub;
 
+import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListQueuesPagedResponse;
+import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListTasksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -57,6 +60,10 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class CloudTasksStub implements BackgroundResource {
+
+  public UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listQueuesPagedCallable()");
+  }
 
   public UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable() {
     throw new UnsupportedOperationException("Not implemented: listQueuesCallable()");
@@ -101,6 +108,10 @@ public abstract class CloudTasksStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTasksPagedCallable()");
   }
 
   public UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable() {

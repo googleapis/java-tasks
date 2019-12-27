@@ -15,6 +15,9 @@
  */
 package com.google.cloud.tasks.v2beta2;
 
+import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListQueuesPagedResponse;
+import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListTasksPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -23,6 +26,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.tasks.v2beta2.stub.CloudTasksStubSettings;
@@ -51,13 +55,13 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listQueues to 30 seconds:
+ * <p>For example, to set the total timeout of getQueue to 30 seconds:
  *
  * <pre>
  * <code>
  * CloudTasksSettings.Builder cloudTasksSettingsBuilder =
  *     CloudTasksSettings.newBuilder();
- * cloudTasksSettingsBuilder.listQueuesSettings().getRetrySettings().toBuilder()
+ * cloudTasksSettingsBuilder.getQueueSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * CloudTasksSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();
  * </code>
@@ -67,7 +71,8 @@ import javax.annotation.Generated;
 @BetaApi
 public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
   /** Returns the object with the settings used for calls to listQueues. */
-  public UnaryCallSettings<ListQueuesRequest, ListQueuesResponse> listQueuesSettings() {
+  public PagedCallSettings<ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
+      listQueuesSettings() {
     return ((CloudTasksStubSettings) getStubSettings()).listQueuesSettings();
   }
 
@@ -123,7 +128,8 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
   }
 
   /** Returns the object with the settings used for calls to listTasks. */
-  public UnaryCallSettings<ListTasksRequest, ListTasksResponse> listTasksSettings() {
+  public PagedCallSettings<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
+      listTasksSettings() {
     return ((CloudTasksStubSettings) getStubSettings()).listTasksSettings();
   }
 
@@ -264,7 +270,8 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     }
 
     /** Returns the builder for the settings used for calls to listQueues. */
-    public UnaryCallSettings.Builder<ListQueuesRequest, ListQueuesResponse> listQueuesSettings() {
+    public PagedCallSettings.Builder<ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
+        listQueuesSettings() {
       return getStubSettingsBuilder().listQueuesSettings();
     }
 
@@ -320,7 +327,8 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     }
 
     /** Returns the builder for the settings used for calls to listTasks. */
-    public UnaryCallSettings.Builder<ListTasksRequest, ListTasksResponse> listTasksSettings() {
+    public PagedCallSettings.Builder<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
+        listTasksSettings() {
       return getStubSettingsBuilder().listTasksSettings();
     }
 
