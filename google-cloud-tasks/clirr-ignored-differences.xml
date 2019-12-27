@@ -20,4 +20,64 @@
     <differenceType>8001</differenceType>
     <className>com/google/cloud/tasks/v2beta2/CloudTasksClient$*</className>
   </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/CloudTasksClient</className>
+    <method>com.google.cloud.tasks.v2beta2.CloudTasksClient$ListQueuesPagedResponse listQueues(com.google.cloud.tasks.v2beta2.ListQueuesRequest)</method>
+    <to>com.google.cloud.tasks.v2beta2.ListQueuesResponse</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/CloudTasksClient</className>
+    <method>com.google.cloud.tasks.v2beta2.CloudTasksClient$ListTasksPagedResponse listTasks(com.google.cloud.tasks.v2beta2.ListTasksRequest)</method>
+    <to>com.google.cloud.tasks.v2beta2.ListTasksResponse</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/CloudTasksSettings</className>
+    <method>com.google.api.gax.rpc.PagedCallSettings listQueuesSettings()</method>
+    <to>com.google.api.gax.rpc.UnaryCallSettings</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/CloudTasksSettings</className>
+    <method>com.google.api.gax.rpc.PagedCallSettings listTasksSettings()</method>
+    <to>com.google.api.gax.rpc.UnaryCallSettings</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/CloudTasksSettings$Builder</className>
+    <method>com.google.api.gax.rpc.PagedCallSettings$Builder listQueuesSettings()</method>
+    <to>com.google.api.gax.rpc.UnaryCallSettings$Builder</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/CloudTasksSettings$Builder</className>
+    <method>com.google.api.gax.rpc.PagedCallSettings$Builder listTasksSettings()</method>
+    <to>com.google.api.gax.rpc.UnaryCallSettings$Builder</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/stub/CloudTasksStubSettings</className>
+    <method>com.google.api.gax.rpc.PagedCallSettings listQueuesSettings()</method>
+    <to>com.google.api.gax.rpc.UnaryCallSettings</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/stub/CloudTasksStubSettings</className>
+    <method>com.google.api.gax.rpc.PagedCallSettings listTasksSettings()</method>
+    <to>com.google.api.gax.rpc.UnaryCallSettings</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/stub/CloudTasksStubSettings$Builder</className>
+    <method>com.google.api.gax.rpc.PagedCallSettings$Builder listQueuesSettings()</method>
+    <to>com.google.api.gax.rpc.UnaryCallSettings$Builder</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/tasks/v2beta2/stub/CloudTasksStubSettings$Builder</className>
+    <method>com.google.api.gax.rpc.PagedCallSettings$Builder listTasksSettings()</method>
+    <to>com.google.api.gax.rpc.UnaryCallSettings$Builder</to>
+  </difference>
 </differences>
