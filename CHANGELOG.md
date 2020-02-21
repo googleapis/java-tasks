@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.28.3](https://www.github.com/googleapis/java-tasks/compare/v1.28.2...v1.28.3) (2020-02-21)
+
+
+### Dependencies
+
+* update core dependencies ([#71](https://www.github.com/googleapis/java-tasks/issues/71)) ([a578f22](https://www.github.com/googleapis/java-tasks/commit/a578f229f93560329f96aea6e2446d5278a6cd5f))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([83c7274](https://www.github.com/googleapis/java-tasks/commit/83c7274c220a83ad1c66aa9affa42f32d62b3450))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([#70](https://www.github.com/googleapis/java-tasks/issues/70)) ([ea4926d](https://www.github.com/googleapis/java-tasks/commit/ea4926d7c9930cc0e19d084b8645711da8987963))
+
 ### [1.28.2](https://www.github.com/googleapis/java-tasks/compare/v1.28.1...v1.28.2) (2020-02-06)
 
 
