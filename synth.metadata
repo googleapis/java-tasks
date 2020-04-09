@@ -1,6 +1,13 @@
 {
-  "updateTime": "2020-04-07T00:58:54.363997Z",
+  "updateTime": "2020-04-09T11:49:42.093607Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-tasks.git",
+        "sha": "21a425829a423378f5b2198bac0c755ea42267a4"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
