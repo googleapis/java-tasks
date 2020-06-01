@@ -21,4 +21,8 @@ function cleanup() {
     echo "cleanup";
 }
 trap cleanup EXIT
+
+## Get the directory of the build script
+scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+${scriptDir}/populate-secrets.sh
 python3 "${KOKORO_GFILE_DIR}/trampoline_v1.py"

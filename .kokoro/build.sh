@@ -20,6 +20,8 @@ scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 ## cd to the parent directory, i.e. the root of the git repo
 cd ${scriptDir}/..
 
+cat ${KOKORO_GFILE_DIR}/secret_manager/not_a_real_secret_testing_permissions
+
 # include common functions
 source ${scriptDir}/common.sh
 
