@@ -1,5 +1,26 @@
 # Changelog
 
+### [1.29.2](https://www.github.com/googleapis/java-tasks/compare/v1.29.1...v1.29.2) (2020-06-16)
+
+
+### Bug Fixes
+
+* restore GAPIC v2 retry configs ([#144](https://www.github.com/googleapis/java-tasks/issues/144)) ([a03b61a](https://www.github.com/googleapis/java-tasks/commit/a03b61ac5313f7cd926805d0f01589b506822dc9))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#150](https://www.github.com/googleapis/java-tasks/issues/150)) ([a4d0563](https://www.github.com/googleapis/java-tasks/commit/a4d056386ae70f243e87cfc1589ee8354cb7d711))
+* update dependency com.google.api:api-common to v1.9.2 ([#157](https://www.github.com/googleapis/java-tasks/issues/157)) ([8e8d3c1](https://www.github.com/googleapis/java-tasks/commit/8e8d3c10adb4582995c6078755f678eb44e26a05))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#138](https://www.github.com/googleapis/java-tasks/issues/138)) ([2e83e36](https://www.github.com/googleapis/java-tasks/commit/2e83e3680d2ab008c212921d4e699890b65b87f5))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#151](https://www.github.com/googleapis/java-tasks/issues/151)) ([d27a27f](https://www.github.com/googleapis/java-tasks/commit/d27a27f116df1f6fa7ca41bc0cce06ba36c65935))
+* update dependency com.google.guava:guava-bom to v29 ([#119](https://www.github.com/googleapis/java-tasks/issues/119)) ([39d1c1c](https://www.github.com/googleapis/java-tasks/commit/39d1c1c626715373e00400108c96858a56ef0406))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#142](https://www.github.com/googleapis/java-tasks/issues/142)) ([4df90ac](https://www.github.com/googleapis/java-tasks/commit/4df90acf9e17654318a0f8d7439e0d867ea317e5))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#148](https://www.github.com/googleapis/java-tasks/issues/148)) ([c8062c6](https://www.github.com/googleapis/java-tasks/commit/c8062c60cfa1ee810188703641c66c359c65c437))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#131](https://www.github.com/googleapis/java-tasks/issues/131)) ([ea89037](https://www.github.com/googleapis/java-tasks/commit/ea8903701b007e2ceeb525ccf26c5992c8f18f79))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#161](https://www.github.com/googleapis/java-tasks/issues/161)) ([d374bc3](https://www.github.com/googleapis/java-tasks/commit/d374bc3fa4c3a9d0085b344245ca845c9a8c2cd0))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#133](https://www.github.com/googleapis/java-tasks/issues/133)) ([cc0e466](https://www.github.com/googleapis/java-tasks/commit/cc0e46693f44f2d7c6b9ce22a7ec2d0a84b6c8f7))
+
 ### [1.29.1](https://www.github.com/googleapis/java-tasks/compare/v1.29.0...v1.29.1) (2020-04-07)
 
 
