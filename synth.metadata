@@ -62,7 +62,6 @@
     ".github/trusted-contribution.yml",
     ".github/workflows/ci.yaml",
     ".kokoro/build.bat",
-    ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
     ".kokoro/common.cfg",
     ".kokoro/common.sh",
