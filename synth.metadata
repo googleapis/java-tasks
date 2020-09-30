@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-tasks.git",
-        "sha": "55d2bca864a85f4df8c65d25eec282cb9d654dc1"
+        "sha": "abe5f7c1374d923e7c5c6cde0a7bdd4b4d50fdc3"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "80003a3de2d8a75f5b47cb2e77e018f7f0f776cc"
+        "sha": "916c10e8581804df2b48a0f0457d848f3faa582e"
       }
     }
   ],
@@ -109,7 +109,6 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "README.md",
     "codecov.yaml",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksClient.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksSettings.java",
