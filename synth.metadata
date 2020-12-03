@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-tasks.git",
-        "sha": "c1c8762ea0f53585a7e6bc8ce2bf688e0794b31c"
+        "sha": "556558c60acbed7b1733f98c77ae02008f71ff75"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "eb37e688331443969eed9b969531751154a956d5",
-        "internalRef": "317130948"
+        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
+        "internalRef": "344134135"
       }
     },
     {
