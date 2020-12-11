@@ -372,7 +372,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     <p>Output only fields cannot be modified using UpdateQueue. Any value specified for an
    *     output only field will be ignored. The queue's [name][google.cloud.tasks.v2.Queue.name]
    *     cannot be changed.
-   * @param update_mask A mask used to specify which fields of the queue are being updated.
+   * @param updateMask A mask used to specify which fields of the queue are being updated.
    *     <p>If empty, then all fields will be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
