@@ -374,7 +374,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     <p>Output only fields cannot be modified using UpdateQueue. Any value specified for an
    *     output only field will be ignored. The queue's
    *     [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
-   * @param update_mask A mask used to specify which fields of the queue are being updated.
+   * @param updateMask A mask used to specify which fields of the queue are being updated.
    *     <p>If empty, then all fields will be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1373,7 +1373,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * @param parent Required. The queue name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-   * @param lease_duration Required. The duration of the lease.
+   * @param leaseDuration Required. The duration of the lease.
    *     <p>Each task returned in the [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will
    *     have its [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] set to the current
    *     time plus the `lease_duration`. The task is leased until its
@@ -1423,7 +1423,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * @param parent Required. The queue name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-   * @param lease_duration Required. The duration of the lease.
+   * @param leaseDuration Required. The duration of the lease.
    *     <p>Each task returned in the [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will
    *     have its [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] set to the current
    *     time plus the `lease_duration`. The task is leased until its
@@ -1521,7 +1521,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-   * @param schedule_time Required. The task's current schedule time, available in the
+   * @param scheduleTime Required. The task's current schedule time, available in the
    *     [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    *     [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
    *     [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction
@@ -1555,7 +1555,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-   * @param schedule_time Required. The task's current schedule time, available in the
+   * @param scheduleTime Required. The task's current schedule time, available in the
    *     [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    *     [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
    *     [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction
@@ -1623,12 +1623,12 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-   * @param schedule_time Required. The task's current schedule time, available in the
+   * @param scheduleTime Required. The task's current schedule time, available in the
    *     [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    *     [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
    *     [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction
    *     is to ensure that your worker currently holds the lease.
-   * @param lease_duration Required. The desired new lease duration, starting from now.
+   * @param leaseDuration Required. The desired new lease duration, starting from now.
    *     <p>The maximum lease duration is 1 week. `lease_duration` will be truncated to the nearest
    *     second.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1653,12 +1653,12 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-   * @param schedule_time Required. The task's current schedule time, available in the
+   * @param scheduleTime Required. The task's current schedule time, available in the
    *     [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    *     [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
    *     [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction
    *     is to ensure that your worker currently holds the lease.
-   * @param lease_duration Required. The desired new lease duration, starting from now.
+   * @param leaseDuration Required. The desired new lease duration, starting from now.
    *     <p>The maximum lease duration is 1 week. `lease_duration` will be truncated to the nearest
    *     second.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1713,7 +1713,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-   * @param schedule_time Required. The task's current schedule time, available in the
+   * @param scheduleTime Required. The task's current schedule time, available in the
    *     [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    *     [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
    *     [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction
@@ -1740,7 +1740,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-   * @param schedule_time Required. The task's current schedule time, available in the
+   * @param scheduleTime Required. The task's current schedule time, available in the
    *     [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    *     [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
    *     [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction
