@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d7b8108668f224c8dc3b87c7f7a9afe78d3cafaf",
-        "internalRef": "353031255"
+        "sha": "a0b91c3dfa479290ed8921fea27020ac4c492763",
+        "internalRef": "353032056"
       }
     },
     {
@@ -331,12 +331,16 @@
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OidcTokenOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PauseQueueRequest.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PauseQueueRequestOrBuilder.java",
+    "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PullMessage.java",
+    "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PullMessageOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PurgeQueueRequest.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PurgeQueueRequestOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/Queue.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueName.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueProto.java",
+    "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueStats.java",
+    "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueStatsOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RateLimits.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RateLimitsOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ResumeQueueRequest.java",
