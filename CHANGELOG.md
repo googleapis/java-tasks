@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.0](https://www.github.com/googleapis/java-tasks/compare/v1.33.2...v1.34.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#480](https://www.github.com/googleapis/java-tasks/issues/480)) ([a6f645c](https://www.github.com/googleapis/java-tasks/commit/a6f645c0741756718cd4e9e3021d5889807286ec))
+
 ### [1.33.2](https://www.github.com/googleapis/java-tasks/compare/v1.33.1...v1.33.2) (2021-07-01)
 
 
