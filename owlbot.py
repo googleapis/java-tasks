@@ -1,10 +1,10 @@
-# Copyright 2018 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,19 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""This script is used to synthesize generated parts of this library."""
-
 import synthtool as s
-import synthtool.gcp as gcp
-import synthtool.languages.java as java
+from synthtool.languages import java
 
-AUTOSYNTH_MULTIPLE_COMMITS = True
-
-gapic = gcp.GAPICBazel()
-
-service = 'tasks'
-versions = ['v2beta2', 'v2beta3', 'v2']
-config_pattern = '/google/cloud/tasks/artman_cloudtasks_{version}.yaml'
 
 GET_IAM_POLICY = """
   public final Policy getIamPolicy(QueueName queueName) {
@@ -48,21 +38,12 @@ TEST_IAM_POLICY = """
 """
 TEST_IAM_POLICY_PREVIOUS = r'(\spublic final TestIamPermissionsResponse testIamPermissions\(TestIamPermissionsRequest request\) {\n\s+return .*\n\s+})'
 
-for version in versions:
-    library = gapic.java_library(
-        service=service,
-        version=version,
-        bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
-    )
-
-    library = library / f"google-cloud-{service}-{version}-java"
-
-    package_name = f'com.google.cloud.{service}.{version}'
-    java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}-java')
-    java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}-java', package_name)
-
+for library in s.get_staging_dirs():
+    # put any special-case replacements here
+    version = library.parts[len(library.parts) - 1]
+    service = 'tasks'
     s.replace(
-        library / f'gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
+        'owl-bot-staging/{version}/gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
         GET_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + GET_IAM_POLICY
     )
@@ -76,15 +57,7 @@ for version in versions:
         TEST_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + TEST_IAM_POLICY
     )
+    s.move(library)
 
-    s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', f'google-cloud-{service}/src')
-    s.copy(library / f'grpc-google-cloud-{service}-{version}-java/src', f'grpc-google-cloud-{service}-{version}/src')
-    s.copy(library / f'proto-google-cloud-{service}-{version}-java/src', f'proto-google-cloud-{service}-{version}/src')
-
-    java.format_code(f'google-cloud-{service}/src')
-    java.format_code(f'grpc-google-cloud-{service}-{version}/src')
-    java.format_code(f'proto-google-cloud-{service}-{version}/src')
-
-java.common_templates(excludes=[
-    '.kokoro/build.sh',
-])
+s.remove_staging_dirs()
+java.common_templates(excludes=[".kokoro/build.sh"])
