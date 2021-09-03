@@ -43,17 +43,17 @@ for library in s.get_staging_dirs():
     version = library.parts[len(library.parts) - 1]
     service = 'tasks'
     s.replace(
-        'owl-bot-staging/{version}/gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
+        f'owl-bot-staging/{version}/gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
         GET_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + GET_IAM_POLICY
     )
     s.replace(
-        'owl-bot-staging/{version}/gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
+        f'owl-bot-staging/{version}/gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
         SET_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + SET_IAM_POLICY
     )
     s.replace(
-        'owl-bot-staging/{version}/gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
+        f'owl-bot-staging/{version}/gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
         TEST_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + TEST_IAM_POLICY
     )
