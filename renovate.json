@@ -8,6 +8,7 @@
     ":automergeDisabled",
     ":ignoreModulesAndTests",
     ":maintainLockFilesDisabled",
+    ":disableDependencyDashboard",
     ":autodetectPinVersions"
   ],
   "packageRules": [
