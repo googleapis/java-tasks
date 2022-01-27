@@ -33,20 +33,16 @@ function determineMavenOpts() {
     # filter down to the version line, then pull out the version between quotes,
     # then trim the version number down to its minimal number (removing any
     # update or suffix number).
-    java -version 2>&1 | grep "version" \
-      | sed -E 's/^.*"(.*?)".*$/\1/g' \
-      | sed -E 's/^(1\.[0-9]\.0).*$/\1/g'
+    java -version 2>&1 | head -n 1 | cut -d'"' -f2
   )
 
-  case $javaVersion in
-    "17")
+  if [[ $javaVersion == 17* ]]
+    then
       # MaxPermSize is no longer supported as of jdk 17
       echo -n "-Xmx1024m"
-      ;;
-    *)
+  else
       echo -n "-Xmx1024m -XX:MaxPermSize=128m"
-      ;;
-  esac
+  fi
 }
 
 export MAVEN_OPTS=$(determineMavenOpts)
