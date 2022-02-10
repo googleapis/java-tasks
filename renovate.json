@@ -8,7 +8,8 @@
     ":automergeDisabled",
     ":ignoreModulesAndTests",
     ":maintainLockFilesDisabled",
-    ":autodetectPinVersions"
+    ":autodetectPinVersions",
+    ":disableDependencyDashboard"
   ],
   "packageRules": [
     {
@@ -69,6 +70,5 @@
       "groupName": "jackson dependencies"
     }
   ],
-  "semanticCommits": true,
-  "dependencyDashboard": true
+  "semanticCommits": true
 }
