@@ -29,22 +29,17 @@ import com.google.cloud.tasks.v2.Task;
 import java.io.IOException;
 import java.util.UUID;
 
-/**
- * Sample application demonstrating Native Image compatibility with Google Cloud Tasks APIs.
- */
+/** Sample application demonstrating Native Image compatibility with Google Cloud Tasks APIs. */
 public class TasksSampleApplication {
   /**
-   * Queue name randomness added to avoid
-   * FAILED_PRECONDITION: The queue cannot be created because a queue with this name existed
-   * too recently.
+   * Queue name randomness added to avoid FAILED_PRECONDITION: The queue cannot be created because a
+   * queue with this name existed too recently.
    */
   private static final String GRAALVM_TEST_QUEUE_NAME = "graal-test-queue-";
 
   private static final String LOCATION_ID = System.getenv("LOCATION_ID");
 
-  /**
-   * Runs the Cloud Tasks sample application.
-   */
+  /** Runs the Cloud Tasks sample application. */
   public static void main(String[] args) throws IOException {
     String projectId = ServiceOptions.getDefaultProjectId();
     LocationName parent = LocationName.of(projectId, LOCATION_ID);
@@ -56,28 +51,26 @@ public class TasksSampleApplication {
 
     try (CloudTasksClient client = CloudTasksClient.create()) {
       // Create queue
-      Queue queue = Queue.newBuilder()
+      Queue queue =
+          Queue.newBuilder()
               .setName(queueName.toString())
               .setRateLimits(RateLimits.newBuilder().setMaxConcurrentDispatches(1).build())
               .build();
 
-      CreateQueueRequest createQueueRequest = CreateQueueRequest.newBuilder()
-              .setParent(parent.toString())
-              .setQueue(queue)
-              .build();
+      CreateQueueRequest createQueueRequest =
+          CreateQueueRequest.newBuilder().setParent(parent.toString()).setQueue(queue).build();
 
       Queue createdQueue = client.createQueue(createQueueRequest);
       System.out.println("Test queue ready: " + createdQueue);
 
       // Create task
-      HttpRequest taskTarget = HttpRequest.newBuilder()
+      HttpRequest taskTarget =
+          HttpRequest.newBuilder()
               .setUrl("https://google.com")
               .setHttpMethod(HttpMethod.GET)
               .build();
 
-      Task taskRequest = Task.newBuilder()
-              .setHttpRequest(taskTarget)
-              .build();
+      Task taskRequest = Task.newBuilder().setHttpRequest(taskTarget).build();
       Task task = client.createTask(queueName, taskRequest);
       System.out.println("Created task: " + task);
 

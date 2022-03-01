@@ -29,12 +29,12 @@ public class ITNativeImageTasksSample {
   @Before
   public void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
-    System.setOut( new PrintStream(bout));
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
   public void testRunSampleApplication() throws Exception {
-    TasksSampleApplication.main(new String[]{});
+    TasksSampleApplication.main(new String[] {});
     String output = bout.toString();
     assertThat(output).contains("Test queue ready");
     assertThat(output).contains("Queue purged");
