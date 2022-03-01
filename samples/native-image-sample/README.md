@@ -20,19 +20,19 @@ Navigate to this directory in a new terminal.
 
 1. Compile the application using the Native Image Compiler. This step may take a few minutes.
 
-    ```
-    mvn package -P native
-    ```
+   ```
+   $ mvn package -P native
+   ```
     
 2. Run the application:
 
-    ```
-    ./target/tasks-sample
-    ```
+   ```
+   $ ./target/tasks-sample
+   ```
 
 3. The application runs through some basic Cloud Tasks operations (create queue, create task) and then prints some results of the operations.
 
-    ```
+   ```
    Test queue ready: name: "projects/xxxxxxxxxx/locations/us-central1/queues/graal-test-queue-4009"
    rate_limits {
    max_dispatches_per_second: 500.0
@@ -74,4 +74,42 @@ Navigate to this directory in a new terminal.
    
    Queue purged
    Queue deleted
-    ```
+   ```
+
+4. Run the test in the project in the native-image mode
+
+   ```
+   $ mvn test -P native
+   ...
+   [INFO] -------------------------------------------------------
+   [INFO]  T E S T S
+   [INFO] -------------------------------------------------------
+   [INFO] Running com.example.tasks.ITNativeImageTasksSample
+   ...
+   [INFO] --- native-maven-plugin:0.9.9:test (test-native) @ native-image-sample ---
+   [INFO] ====================
+   [INFO] Initializing project: native-image-sample
+   ...
+   com.example.tasks.ITNativeImageTasksSample > testRunSampleApplication SUCCESSFUL
+   
+   
+   Test run finished after 1025 ms
+   [         3 containers found      ]
+   [         0 containers skipped    ]
+   [         3 containers started    ]
+   [         0 containers aborted    ]
+   [         3 containers successful ]
+   [         0 containers failed     ]
+   [         1 tests found           ]
+   [         0 tests skipped         ]
+   [         1 tests started         ]
+   [         0 tests aborted         ]
+   [         1 tests successful      ]
+   [         0 tests failed          ]
+   
+   [INFO] ------------------------------------------------------------------------
+   [INFO] BUILD SUCCESS
+   [INFO] ------------------------------------------------------------------------
+   [INFO] Total time:  02:27 min
+   ...
+   ```
