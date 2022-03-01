@@ -40,12 +40,14 @@ public class TasksSampleApplication {
    */
   private static final String GRAALVM_TEST_QUEUE_NAME = "graal-test-queue-";
 
+  private static final String LOCATION_ID = System.getenv("LOCATION_ID");
+
   /**
    * Runs the Cloud Tasks sample application.
    */
   public static void main(String[] args) throws IOException {
     String projectId = ServiceOptions.getDefaultProjectId();
-    LocationName parent = LocationName.of(projectId, "us-east1");
+    LocationName parent = LocationName.of(projectId, LOCATION_ID);
     QueueName queueName =
         QueueName.of(
             parent.getProject(),

@@ -23,12 +23,16 @@ Navigate to this directory in a new terminal.
    ```
    $ mvn package -P native
    ```
+
+   The project uses an environment variable `LOCATION_ID` to run the test.
     
 2. Run the application:
 
    ```
-   $ ./target/tasks-sample
+   $ LOCATION_ID=us-east1 ./target/tasks-sample
    ```
+
+   The sample application uses an environment variable `LOCATION_ID`.
 
 3. The application runs through some basic Cloud Tasks operations (create queue, create task) and then prints some results of the operations.
 
@@ -79,7 +83,7 @@ Navigate to this directory in a new terminal.
 4. Run the test in the project in the native-image mode
 
    ```
-   $ mvn test -P native
+   $ LOCATION_ID=us-east1 mvn test -P native
    ...
    [INFO] -------------------------------------------------------
    [INFO]  T E S T S
