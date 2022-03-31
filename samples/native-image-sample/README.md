@@ -18,23 +18,27 @@ It will then submit a new task to this queue.
 
 Navigate to this directory in a new terminal.
 
-1. Compile the application using the Native Image Compiler. This step may take a few minutes.
+1. The project uses an environment variable `LOCATION_ID` to run the test. Set the environment variable by calling:
+
+   ```
+   export LOCATION_ID=us-east1
+   ```
+ 
+2. Compile the application using the Native Image Compiler. This step may take a few minutes.
 
    ```
    $ mvn package -P native
    ```
 
-   The project uses an environment variable `LOCATION_ID` to run the test.
+   
     
-2. Run the application:
+3. Run the application:
 
    ```
-   $ LOCATION_ID=us-east1 ./target/tasks-sample
+   $ ./target/tasks-sample
    ```
 
-   The sample application uses an environment variable `LOCATION_ID`.
-
-3. The application runs through some basic Cloud Tasks operations (create queue, create task) and then prints some results of the operations.
+4. The application runs through some basic Cloud Tasks operations (create queue, create task) and then prints some results of the operations.
 
    ```
    Test queue ready: name: "projects/xxxxxxxxxx/locations/us-central1/queues/graal-test-queue-4009"
@@ -80,7 +84,7 @@ Navigate to this directory in a new terminal.
    Queue deleted
    ```
 
-4. Run the test in the project in the native-image mode
+5. Run the test in the project in the native-image mode
 
    ```
    $ LOCATION_ID=us-east1 mvn test -P native
