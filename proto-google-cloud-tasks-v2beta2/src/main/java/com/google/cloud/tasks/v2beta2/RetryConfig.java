@@ -71,14 +71,14 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              numAttemptsCase_ = 1;
               numAttempts_ = input.readInt32();
+              numAttemptsCase_ = 1;
               break;
             }
           case 16:
             {
-              numAttemptsCase_ = 2;
               numAttempts_ = input.readBool();
+              numAttemptsCase_ = 2;
               break;
             }
           case 26:

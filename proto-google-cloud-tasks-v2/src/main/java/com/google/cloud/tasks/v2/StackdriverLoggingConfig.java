@@ -143,7 +143,7 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (samplingRatio_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(samplingRatio_) != 0) {
       output.writeDouble(1, samplingRatio_);
     }
     unknownFields.writeTo(output);
@@ -155,7 +155,7 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (samplingRatio_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(samplingRatio_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, samplingRatio_);
     }
     size += unknownFields.getSerializedSize();

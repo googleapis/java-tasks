@@ -231,7 +231,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (maxDispatchesPerSecond_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(maxDispatchesPerSecond_) != 0) {
       output.writeDouble(1, maxDispatchesPerSecond_);
     }
     if (maxBurstSize_ != 0) {
@@ -249,7 +249,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (maxDispatchesPerSecond_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(maxDispatchesPerSecond_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, maxDispatchesPerSecond_);
     }
     if (maxBurstSize_ != 0) {
