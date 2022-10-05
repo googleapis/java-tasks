@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.12](https://github.com/googleapis/java-tasks/compare/v2.3.11...v2.3.12) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([79d519c](https://github.com/googleapis/java-tasks/commit/79d519c1d0970ed16b779be4015de0101971570e))
+
 ## [2.3.11](https://github.com/googleapis/java-tasks/compare/v2.3.10...v2.3.11) (2022-10-03)
 
 
