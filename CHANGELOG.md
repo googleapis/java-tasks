@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.12](https://github.com/googleapis/java-tasks/compare/v2.1.11...v2.1.12) (2022-10-13)
+
+
+### Dependencies
+
+* Regenerating with new Protobuf (2.1.x) ([#801](https://github.com/googleapis/java-tasks/issues/801)) ([e39ff23](https://github.com/googleapis/java-tasks/commit/e39ff233e4c97d9f17cb064dc8858799924e0c6b))
+
 ### [2.1.11](https://github.com/googleapis/java-tasks/compare/v2.1.10...v2.1.11) (2022-04-15)
 
 
